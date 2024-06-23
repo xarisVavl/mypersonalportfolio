@@ -55,3 +55,33 @@ document.getElementById("cv-download-button").addEventListener('mouseleave', (()
 
   
   }))
+
+
+  function toggleNightMode() {
+    let day=true;
+    document.querySelector('.nightmode-button').addEventListener('click',() => {
+    if (day) {
+    document.documentElement.style.setProperty('--White', 'hsl(0, 0%, 30%)');
+    document.documentElement.style.setProperty('--gray', 'gray');
+    document.documentElement.style.setProperty('--Grey', '#D3D3D3');
+    document.documentElement.style.setProperty('--Dark-Grey', '#FFFFFF');
+    document.documentElement.style.setProperty('--Off-Black', 'hsl(0, 0%, 20%)');
+    document.querySelector('.nightmode-button').innerHTML='<img src ="images/day-forecast-hot-svgrepo-com.svg" alt="">';
+
+  day=false;
+}
+
+else  if(!day){
+  document.documentElement.style.setProperty('--White', '#D6D6D6');
+  document.documentElement.style.setProperty('--gray', 'gray');
+  document.documentElement.style.setProperty('--Grey', 'hsl(0, 0%, 20%)');
+  document.documentElement.style.setProperty('--Dark-Grey', 'hsl(0, 0%, 12%)');
+  document.documentElement.style.setProperty('--Off-Black', 'hsl(0, 0%, 8%)');
+   document.querySelector('.nightmode-button').innerHTML='<img src ="images/night-mode-svgrepo-com.svg" alt="">'
+  day=true;
+}
+
+})
+}
+
+toggleNightMode();
